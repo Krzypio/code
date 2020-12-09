@@ -1,6 +1,7 @@
 package com.study.automatic.rod.backend.ui;
 
 import com.study.automatic.rod.backend.ui.material.MaterialView;
+import com.study.automatic.rod.backend.ui.workstation.WorkstationView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.dependency.CssImport;
