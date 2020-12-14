@@ -55,7 +55,7 @@ public class WorkstationView extends VerticalLayout {
 
     private HorizontalLayout createComboBoxLayout() {
         firstMaterial = new ChoosenMaterialForm(materialService);
-        /*List<Material> materials = materialService.findAll();
+        /*List<Material> materials = materialService.findAll();//
         materials.sort(Comparator.comparing(Material::getName, String::compareToIgnoreCase));
         firstMaterialBox.setItems(materials);
         firstMaterialBox.setItemLabelGenerator(Material::getName);
