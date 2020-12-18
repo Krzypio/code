@@ -1,9 +1,7 @@
 package com.study.automatic.rod.backend.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
 @MappedSuperclass
@@ -12,8 +10,19 @@ public class AbstractEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date saveDate;
+
     public Long getId() {
         return id;
+    }
+
+    public Date getSaveDate() {
+        return saveDate;
+    }
+
+    public void setSaveDate(Date saveDate) {
+        this.saveDate = saveDate;
     }
 
     @Override
@@ -28,4 +37,7 @@ public class AbstractEntity {
     public int hashCode() {
         return Objects.hash(getId());
     }
+
+    @PrePersist
+    public void beforePersist() { setSaveDate (new Date(System.currentTimeMillis()));}
 }
