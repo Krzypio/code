@@ -49,4 +49,11 @@ public class ChoosenMaterialForm extends VerticalLayout {
         });
     }
 
+    public ComboBox<Material> getMaterialBox() {
+        return materialBox;
+    }
+
+    public void setMaterialBox(ComboBox<Material> materialBox) {
+        this.materialBox = materialBox;
+    }
 }

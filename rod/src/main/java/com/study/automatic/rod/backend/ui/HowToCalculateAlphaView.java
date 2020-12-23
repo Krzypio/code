@@ -33,7 +33,8 @@ public class HowToCalculateAlphaView extends Div {
     }
 
     private InputStream getPdfInputStream() throws FileNotFoundException {
-        File file = new File("src\\main\\webapp\\pdf\\zad1.pdf");   //windows
+        File file = new File("zad1.pdf");   //windows
+        //File file = new File("src\\main\\webapp\\pdf\\zad1.pdf");   //windows
         //File file = new File("src/main/webapp/pdf/zad1.pdf");   //linux
         System.out.println("Expecting to find file from " + file.getAbsolutePath());
         return new FileInputStream(file);

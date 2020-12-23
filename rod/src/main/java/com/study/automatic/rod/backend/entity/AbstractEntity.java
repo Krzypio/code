@@ -21,7 +21,7 @@ public class AbstractEntity {
         return saveDate;
     }
 
-    public void setSaveDate(Date saveDate) {
+    private void setSaveDate(Date saveDate) {
         this.saveDate = saveDate;
     }
 
