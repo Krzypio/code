@@ -1,18 +1,17 @@
 public class Main {
-    public static void main(String[] args){
+    private static final int PTC_LAB_ID = 31;
+    private static final int LETTER_AMOUNT = 5;
+    private static final String WORDS_BASE= "ABCEFGHIJLOPS";
 
-        SevenSegmentDisplay ssd = new SevenSegmentDisplay();
-        ssd.setInput('i');
-        System.out.println(ssd.toString());
-        ssd.setInput('A');
-        System.out.println(ssd.toString());
-        ssd.setInput('i');
-        System.out.println(ssd.toString());
-        ssd.setInput("0000000");
-        System.out.println(ssd.toString());
-        ssd.setInput("1111100");
-        System.out.println(ssd.toString());
-        ssd.setInput("1110111");
-        System.out.println(ssd.toString());
+    public static void main(String[] args){
+        WordAvaliable wb = new WordAvaliable(WORDS_BASE, LETTER_AMOUNT, PTC_LAB_ID);
+        wb.show();
+
+        CodecLetterGray clg = new CodecLetterGray(wb.getWordsAvaliable(), 3);
+        System.out.println(clg.getWord());
+        for (int i=0; i<=6; i++){
+            System.out.println(i + ": lc " + clg.getLetterChar(i) + " ls " + clg.getLetterString(i));
+        }
+
     }//main
 }
