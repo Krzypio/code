@@ -2,7 +2,7 @@ import java.util.ArrayList;
 //dla 000 jest ' ' a pozniej znaki z word
 public class CodecLetterGray {
     private static long moduleAmount = 0;
-    private long moduleNo = 0;
+    private final long moduleNo;
 
     private int minBitAmount=0;
     private int bitAmount=0;
@@ -105,5 +105,28 @@ public class CodecLetterGray {
         }//if
 
         return arr.get(index);
+    }
+
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("CLG["+moduleNo+"] :\n");
+        for (int i=0; i<=6; i++){
+            sb.append("\t" + i + ": \'" + getLetterChar(i) + "\'" + getLetterString(i) + "\n");
+        }//for
+        sb.setLength(sb.length()-1);
+        return sb.toString();
+    }
+
+    public void show(){
+        System.out.println(toString());
+    }
+
+    public String generateInputBus(){
+        StringBuilder sb = new StringBuilder();
+        for (int i=this.word.length(); i>0; i--){
+            sb.append(getLetterString(i) + " ");
+        }//for
+        sb.setLength(sb.length()-1);
+        return sb.toString();
     }
 }

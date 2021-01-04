@@ -1,7 +1,7 @@
 public class ClockToGray3bit {
     private static final int WORD_LENGTH = 8;
     private static long moduleAmount = 0;
-    private long moduleNo;
+    private final long moduleNo;
 
 
     private int nbkInt = 0;

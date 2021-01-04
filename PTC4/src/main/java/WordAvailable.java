@@ -1,6 +1,6 @@
-public class WordAvaliable {
+public class WordAvailable {
     private static long moduleAmount = 0;
-    private long moduleNo;
+    private final long moduleNo;
 
     //to include
     private String wordsBase = "";
@@ -11,12 +11,12 @@ public class WordAvaliable {
     private int firstLetterNo = 0;
     private String wordsAvaliable = "";
 
-    private WordAvaliable() {
+    private WordAvailable() {
         moduleNo = moduleAmount;
         moduleAmount++;
     }//WordBase
 
-    public WordAvaliable(String wordBase, int letterAmount, int ptcLabId){
+    public WordAvailable(String wordBase, int letterAmount, int ptcLabId){
         this();
         setWorldBase(wordBase);
         setLetterAmount(letterAmount);
@@ -140,5 +140,14 @@ public class WordAvaliable {
 
     public void show(){
         System.out.println(toString());
+    }
+
+    public char getAvaliableLetter(int index){
+        if (index < 0  || index >= wordsAvaliable.length()){
+            System.err.println("WordBase[" + moduleNo + "] getAvaliableLetter(int index): index("+index+") <0 or >=wordsAvaliable.length("+wordsAvaliable.length()+") return value ' '");
+            return '_';
+        }
+
+        return wordsAvaliable.charAt(index);
     }
 }
