@@ -1,6 +1,7 @@
 package com.study.automatic.rod.backend.ui;
 
 import com.study.automatic.rod.backend.ui.material.MaterialView;
+import com.study.automatic.rod.backend.ui.sampling.StreamingDataExampleView;
 import com.study.automatic.rod.backend.ui.workstation.WorkstationView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -55,8 +56,9 @@ public class MainLayout extends AppLayout {
         RouterLink materialLink = new RouterLink("Materials", MaterialView.class);
         RouterLink workstationLink = new RouterLink("Workstation", WorkstationView.class);
         RouterLink how_to_calculate_alphaLink = new RouterLink("How to calculate \u03b1", HowToCalculateAlphaView.class);
+        RouterLink streamingDataExampleViewLink = new RouterLink("StreamingDataExample", StreamingDataExampleView.class);
 
-        List<RouterLink> links = Arrays.asList(materialLink, workstationLink, how_to_calculate_alphaLink);
+        List<RouterLink> links = Arrays.asList(materialLink, workstationLink, how_to_calculate_alphaLink, streamingDataExampleViewLink);
         for (RouterLink link: links){
             link.setHighlightCondition(HighlightConditions.sameLocation());
             addToDrawer(new VerticalLayout(link));
