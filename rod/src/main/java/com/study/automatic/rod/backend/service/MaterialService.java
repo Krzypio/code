@@ -10,12 +10,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
+//
 @Service
 public class MaterialService {
     private static final Logger LOGGER = Logger.getLogger(MaterialService.class.getName());
-    private MaterialRepository materialRepository;
-
+    private final MaterialRepository materialRepository;
+//
     public MaterialService(MaterialRepository repository){
         this.materialRepository=repository;
     }

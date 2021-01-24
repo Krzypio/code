@@ -18,13 +18,13 @@ import com.vaadin.flow.component.DetachEvent;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import java.util.ArrayList;
-
+//
 //@Route("stream")
 //@Push
 public class StreamingDataExampleView extends VerticalLayout {   // extends ExampleHolderView
     static private boolean isThreadRunning = false;
     private double nextValueDouble = 0;
-
+//
     /*private double oYmin = 0;
     private double oYmax = 100;
     private double oYtick = 10;*/
@@ -104,6 +104,6 @@ public class StreamingDataExampleView extends VerticalLayout {   // extends Exam
     }
 
     public void setRunThread(boolean runThread) {
-        this.isThreadRunning = runThread;
+        isThreadRunning = runThread;
     }
 }

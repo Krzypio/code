@@ -14,12 +14,12 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.StreamResource;
 
 import java.io.*;
-
+//
 @Route(value = "how_to_calculate_alpha", layout = MainLayout.class)
 //@CssImport("./styles/workstation-styles.css")
 @PageTitle("How to calculate \u03b1 | Automatic")
 public class HowToCalculateAlphaView extends Div {
-
+//
     public HowToCalculateAlphaView() {
         setHeight("100%");
         add(new EmbeddedPdfDocument(new StreamResource("zad1.pdf", () -> {

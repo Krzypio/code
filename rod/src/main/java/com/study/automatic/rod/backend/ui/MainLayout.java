@@ -2,7 +2,6 @@ package com.study.automatic.rod.backend.ui;
 
 import com.study.automatic.rod.backend.ui.material.MaterialView;
 import com.study.automatic.rod.backend.ui.sampling.SamplingView;
-import com.study.automatic.rod.backend.ui.sampling.StreamingDataExampleView;
 import com.study.automatic.rod.backend.ui.workstation.WorkstationView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -53,7 +52,7 @@ public class MainLayout extends AppLayout {
 
         addToNavbar(header);
     }
-
+//
     private void createDrawer() {
         RouterLink materialLink = new RouterLink("Materials", MaterialView.class);
         RouterLink workstationLink = new RouterLink("Workstation", WorkstationView.class);
