@@ -5,6 +5,7 @@ import com.github.appreciated.apexcharts.ApexChartsBuilder;
 import com.github.appreciated.apexcharts.config.builder.ChartBuilder;
 import com.github.appreciated.apexcharts.config.builder.DataLabelsBuilder;
 import com.github.appreciated.apexcharts.config.builder.XAxisBuilder;
+import com.github.appreciated.apexcharts.config.builder.YAxisBuilder;
 import com.github.appreciated.apexcharts.config.chart.Type;
 import com.github.appreciated.apexcharts.config.chart.animations.Easing;
 import com.github.appreciated.apexcharts.config.chart.animations.builder.DynamicAnimationBuilder;
@@ -14,21 +15,25 @@ import com.github.appreciated.apexcharts.config.chart.builder.ZoomBuilder;
 import com.github.appreciated.apexcharts.helper.Series;
 import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.DetachEvent;
-import com.vaadin.flow.component.page.Push;
-import com.vaadin.flow.router.Route;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
-import java.security.SecureRandom;
 import java.util.ArrayList;
 
 //@Route("stream")
 //@Push
-public class StreamingDataExampleView extends ExampleHolderView {
+public class StreamingDataExampleView extends VerticalLayout {   // extends ExampleHolderView
+    static private boolean isThreadRunning = false;
+    private double nextValueDouble = 0;
 
-    private double sliderValueDouble = 0;
+    /*private double oYmin = 0;
+    private double oYmax = 100;
+    private double oYtick = 10;*/
+
     private final ApexCharts chart;
     private Thread thread;
 
     public StreamingDataExampleView() {
+        setSizeFull();
 
         chart = ApexChartsBuilder.get().withChart(ChartBuilder.get()
                 .withType(Type.line)
@@ -46,11 +51,16 @@ public class StreamingDataExampleView extends ExampleHolderView {
                         .withEnabled(false)
                         .build())
                 .withXaxis(XAxisBuilder.get().withRange(10.0).build())
+                /*.withYaxis(YAxisBuilder.get()
+                        .withMin(oYmin)
+                        .withMax(oYmax)
+                        .withTickAmount(oYtick)
+                        .build())*/
                 .withSeries(new Series<>(0))
                 .build();
 
         chart.setDebug(true);
-        getHolder().add(chart);
+        add(chart);
     }
 
     @Override
@@ -65,9 +75,10 @@ public class StreamingDataExampleView extends ExampleHolderView {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                /*final SecureRandom random = new SecureRandom();*/
-                arrayList.add(sliderValueDouble);
-                getUI().ifPresent(ui -> ui.access(() -> chart.updateSeries(new Series<>(arrayList.toArray(new Double[]{})))));
+                if(isThreadRunning){
+                    arrayList.add(nextValueDouble);
+                    getUI().ifPresent(ui -> ui.access(() -> chart.updateSeries(new Series<>(arrayList.toArray(new Double[]{})))));
+                }
             }
         });
         thread.start();
@@ -77,13 +88,22 @@ public class StreamingDataExampleView extends ExampleHolderView {
     protected void onDetach(DetachEvent detachEvent) {
         super.onDetach(detachEvent);
         thread.interrupt();
+        isThreadRunning = false;
     }
 
-    public double getSliderValueDouble() {
-        return sliderValueDouble;
+    public double getNextValueDouble() {
+        return nextValueDouble;
     }
 
-    public void setSliderValueDouble(double sliderValueDouble) {
-        this.sliderValueDouble = sliderValueDouble;
+    public void setNextValueDouble(double nextValueDouble) {
+        this.nextValueDouble = nextValueDouble;
+    }
+
+    public boolean isRunThread() {
+        return isThreadRunning;
+    }
+
+    public void setRunThread(boolean runThread) {
+        this.isThreadRunning = runThread;
     }
 }

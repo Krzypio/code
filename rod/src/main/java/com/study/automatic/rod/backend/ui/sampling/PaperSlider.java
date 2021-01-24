@@ -23,4 +23,7 @@ public class PaperSlider
     public void setPin(boolean pin) {
         this.getElement().setProperty("pin", pin);
     }
+    public void setMin(int min){
+        this.getElement().setProperty("min", min);
+    }
 }
