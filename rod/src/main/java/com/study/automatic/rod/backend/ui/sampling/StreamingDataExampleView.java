@@ -20,10 +20,11 @@ import com.vaadin.flow.router.Route;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 
-@Route("stream")
-@Push
+//@Route("stream")
+//@Push
 public class StreamingDataExampleView extends ExampleHolderView {
 
+    private double sliderValueDouble = 0;
     private final ApexCharts chart;
     private Thread thread;
 
@@ -64,8 +65,8 @@ public class StreamingDataExampleView extends ExampleHolderView {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                final SecureRandom random = new SecureRandom();
-                arrayList.add(random.nextDouble());
+                /*final SecureRandom random = new SecureRandom();*/
+                arrayList.add(sliderValueDouble);
                 getUI().ifPresent(ui -> ui.access(() -> chart.updateSeries(new Series<>(arrayList.toArray(new Double[]{})))));
             }
         });
@@ -76,5 +77,13 @@ public class StreamingDataExampleView extends ExampleHolderView {
     protected void onDetach(DetachEvent detachEvent) {
         super.onDetach(detachEvent);
         thread.interrupt();
+    }
+
+    public double getSliderValueDouble() {
+        return sliderValueDouble;
+    }
+
+    public void setSliderValueDouble(double sliderValueDouble) {
+        this.sliderValueDouble = sliderValueDouble;
     }
 }

@@ -1,6 +1,7 @@
 package com.study.automatic.rod.backend.ui;
 
 import com.study.automatic.rod.backend.ui.material.MaterialView;
+import com.study.automatic.rod.backend.ui.sampling.SamplingView;
 import com.study.automatic.rod.backend.ui.sampling.StreamingDataExampleView;
 import com.study.automatic.rod.backend.ui.workstation.WorkstationView;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -13,13 +14,14 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.page.Push;
 import com.vaadin.flow.router.HighlightConditions;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.VaadinSession;
 
 import java.util.Arrays;
 import java.util.List;
-
+@Push// dla wykresu potrzebne
 @CssImport("./styles/main_layout-styles.css")
 public class MainLayout extends AppLayout {
     public MainLayout() {
@@ -56,9 +58,10 @@ public class MainLayout extends AppLayout {
         RouterLink materialLink = new RouterLink("Materials", MaterialView.class);
         RouterLink workstationLink = new RouterLink("Workstation", WorkstationView.class);
         RouterLink how_to_calculate_alphaLink = new RouterLink("How to calculate \u03b1", HowToCalculateAlphaView.class);
-        RouterLink streamingDataExampleViewLink = new RouterLink("StreamingDataExample", StreamingDataExampleView.class);
+        //RouterLink streamingDataExampleViewLink = new RouterLink("StreamingDataExample", StreamingDataExampleView.class);
+        RouterLink samplingLink = new RouterLink("SamplingView", SamplingView.class);
 
-        List<RouterLink> links = Arrays.asList(materialLink, workstationLink, how_to_calculate_alphaLink, streamingDataExampleViewLink);
+        List<RouterLink> links = Arrays.asList(materialLink, workstationLink, how_to_calculate_alphaLink/*, streamingDataExampleViewLink*/, samplingLink);
         for (RouterLink link: links){
             link.setHighlightCondition(HighlightConditions.sameLocation());
             addToDrawer(new VerticalLayout(link));
