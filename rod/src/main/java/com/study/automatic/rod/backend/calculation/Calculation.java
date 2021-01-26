@@ -1,57 +1,157 @@
 package com.study.automatic.rod.backend.calculation;
 
 public class Calculation {
-    private double x, x0, xAlpha = -1000;
-    private double y, y0, yAlpha = -1000;
-    private double t, t0 = -1000;
-    private double z, l, l0=-1000;
+    private double x;
 
-    public Calculation(double x0, double xAlpha, double y0, double yAlpha, double z, double t0) {
-        this.x0=x0;
-        this.x=x0;
-        this.xAlpha=xAlpha;
-        this.y0=y0;
-        this.y=y0;
-        this.yAlpha=yAlpha;
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setXi(double xi) {
+        this.xi = xi;
+    }
+
+    public void setxAlpha(double xAlpha) {
+        this.xAlpha = xAlpha;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public void setYi(double yi) {
+        this.yi = yi;
+    }
+
+    public void setyAlpha(double yAlpha) {
+        this.yAlpha = yAlpha;
+    }
+
+    public void setZ(double z) {
+        this.z = z;
+    }
+
+    public void setLicznik(double licznik) {
+        this.licznik = licznik;
+    }
+
+    public void setPsi(double psi) {
+        this.psi = psi;
+    }
+
+    public void setL(double l) {
+        this.l = l;
+    }
+
+    private double xi;
+    private double xAlpha ;
+    private double y, yi, yAlpha ,z;
+    private double T; //temperatura z suwaka
+    private double t; //temperatura poprzedniego kroku
+private double  licznik=0;
+
+
+
+    public double getTi() {
+        return ti;
+    }
+
+    public void setTi(double ti) {
+        this.ti = ti;
+        calculateLi();
+    }
+
+    private double ti;
+    private double psi;
+
+    public void setLpoprz(double lpoprz) {
+        Lpoprz = lpoprz;
+    }
+
+    private double Lpoprz;
+    private double l;
+
+
+
+    public double getLpoprz() {
+        return Lpoprz;
+    }
+
+    public double getl() {
+        return l;
+    }
+
+
+
+    public double getXi() {
+        return xi;
+    }
+
+
+
+    public double getPsi() {
+        return psi;
+    }
+
+    public Calculation(double x,double y, double t,double z,double xAlpha,double yAlpha ) {
+        this.x=x;
+        this.y=y;
         this.z=z;
-        this.t0=t0;
-        this.t=t0;
+        this.t=t;
+        this.xAlpha=xAlpha;
+        this.yAlpha=yAlpha;
+        this.Lpoprz=Lpoprz;
+      //  calculateLi();
 
-        calculateL0();
-        calculateL();
     }
 
-    private void calculateX(){
-        x=x0*(1+xAlpha+t-t0);
+
+
+    private void calculateLi(){//finalny krok. wynik do glownego wykresu L w kroku wybrania tej temperatury
+    setLpoprz(l);
+        if(licznik ==0){
+            l=x+y+z;
+            licznik++;
+            setLpoprz(l);
+            setX(x);
+            setY(y);
+            setZ(z);
+
+        }
+        else{
+            double delta=ti-t;//dla 1 obliczenia t0 = stałe 20 potem to wynik z poprzedniego kroku
+            xi=x*(1+xAlpha*delta);
+            yi=y*(1+yAlpha*delta);
+            psi=xi+yi-x-y;
+
+            setX(xi);
+            setY(yi);
+            setT(ti);
+            l=Lpoprz+psi;//w pierwszym kroku l0 ma byc rowne Lstart, potem to kolejne wyniki
+        }
+
     }
 
-    private void calculateY(){
-        y=y0*(1+yAlpha+t-t0);
+    public void setTpoprz(double t) {
+        this.t = t;
+
+
+        calculateLi();
     }
 
-    private void calculateL(){
-        l=x+y+z;
-    }
-
-    private void calculateL0(){
-        l0=x0+y0+z;
-    }
 
     public void setT(double t) {
         this.t = t;
 
-        calculateX();
-        calculateY();
-        calculateL();
+
+
     }
 
     public double getX() {
         return x;
     }
 
-    public double getX0() {
-        return x0;
-    }
+
 
     public double getxAlpha() {
         return xAlpha;
@@ -61,9 +161,7 @@ public class Calculation {
         return y;
     }
 
-    public double getY0() {
-        return y0;
-    }
+
 
     public double getyAlpha() {
         return yAlpha;
@@ -73,19 +171,11 @@ public class Calculation {
         return t;
     }
 
-    public double getT0() {
-        return t0;
-    }
 
-    public double getZ() {
-        return z;
-    }
 
     public double getL() {
         return l;
     }
 
-    public double getL0() {
-        return l0;
-    }
+
 }

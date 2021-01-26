@@ -3,6 +3,7 @@ package com.study.automatic.rod.backend.ui.sampling;
 
 import com.github.appreciated.apexcharts.helper.Series;
 import com.study.automatic.rod.backend.calculation.Calculation;
+import com.study.automatic.rod.backend.calculation.firstCalculation;
 import com.study.automatic.rod.backend.entity.Record;
 import com.study.automatic.rod.backend.entity.Sample;
 import com.study.automatic.rod.backend.service.RecordService;
@@ -30,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 //@CssImport("./styles/workstation-styles.css")
 @PageTitle("Test | Automatic")
 public class SamplingView extends VerticalLayout {
-    private UI ui;
+    private final UI ui;
     private Thread thread;
     private boolean isThreadRunning = false;
 
@@ -38,20 +39,30 @@ public class SamplingView extends VerticalLayout {
     RecordService recordService;
 
     private Sample sample;
-    private StreamingDataExampleView chart, chart2, chart3;
+    private final StreamingDataExampleView chart;
+    private final StreamingDataExampleView chart2;
+    private final StreamingDataExampleView chart3;
 
     private PaperSlider paperSlider;
-    private Label sliderValueLabel;
+    private final Label sliderValueLabel;
 
     private Button startButton;
     private Button stopButton;
-
-    private Calculation calculation;
-
+    boolean czyPierwszypoguziku=true;
+    private final Calculation calculation;
+    //private firstCalculation firstCalculation;
+    private ArrayList<Calculation> wyniki;
 
     public SamplingView(SampleService sampleService, RecordService recordService){
-        double t0=0;
-        this.calculation = new Calculation(1000, 1, 1000, 10, 2, t0);
+
+        double x=200,y=200,z=10,t=20,t0=20;// potem brane z inputow albo cos Z i T najlepiej
+double xAlpha=0.00017,yAlpha=0.00012;
+
+      //  this.firstCalculation=new firstCalculation(x,y,z);
+      //  double L0 = 410;
+      //  firstCalculation.setL0(L0);
+
+        this.calculation = new Calculation(x,y,z,t,xAlpha,yAlpha);
         chart = new StreamingDataExampleView();
         chart2 = new StreamingDataExampleView();
         chart3 = new StreamingDataExampleView();
@@ -127,8 +138,8 @@ public class SamplingView extends VerticalLayout {
     private PaperSlider createSlider(){
 
         this.paperSlider = new PaperSlider();
-        paperSlider.setMin(0);
-        paperSlider.setMax(100);
+        paperSlider.setMin(-100);
+        paperSlider.setMax(200);
         paperSlider.setPin(true);
 
         connectSliderWithCharts();
@@ -139,10 +150,23 @@ public class SamplingView extends VerticalLayout {
         paperSlider.addValueChangeListener(e -> {
             sliderValueLabel.setText(e.getValue().toString());
 
-            calculation.setT(e.getValue());
-            chart.setNextValueDouble(calculation.getX());
-            chart2.setNextValueDouble(calculation.getL());
-            chart3.setNextValueDouble(calculation.getY());
+          //  if(czyPierwszypoguziku==true){
+//calculation dla 1 wywolania musi sie odnosic do Odl(0) potem reszta dalej. to tylko generuje wynik potrzebny dla 1 wywolania
+             //   double L0 = 0;
+             //   firstCalculation.setL0(L0);
+            //    System.out.println(L0+"\n");
+             //   calculation.setLpoprz(L0);
+              //  czyPierwszypoguziku=false;
+           // }
+
+
+                calculation.setTi(e.getValue());
+                chart.setNextValueDouble(calculation.getX());
+                chart2.setNextValueDouble(calculation.getPsi());
+                chart3.setNextValueDouble(calculation.getY());
+                //chart3.setNextValueDouble(calculation.getPsi());
+
+
         });//e
     }
 
@@ -151,6 +175,7 @@ public class SamplingView extends VerticalLayout {
         startButton.setEnabled(true);
         stopButton.setVisible(false);
         stopButton.setEnabled(false);
+        czyPierwszypoguziku=true;
     }
     private void setStopEnable(){
         startButton.setVisible(false);
