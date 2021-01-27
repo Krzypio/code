@@ -29,7 +29,7 @@ public class MainLayout extends AppLayout {
     }
 
     private void createHeader() {
-        H1 logo = new H1("Authomatic");
+        H1 logo = new H1("Linear expansion");
         logo.addClassName("logo");
 
         Anchor logout = new Anchor("logout", "Log out");
@@ -56,7 +56,7 @@ public class MainLayout extends AppLayout {
     private void createDrawer() {
         RouterLink materialLink = new RouterLink("Materials", MaterialView.class);
         RouterLink workstationLink = new RouterLink("Workstation", WorkstationView.class);
-        RouterLink how_to_calculate_alphaLink = new RouterLink("How to calculate \u03b1", HowToCalculateAlphaView.class);
+        RouterLink how_to_calculate_alphaLink = new RouterLink("Project info", HowToCalculateAlphaView.class);
         //RouterLink streamingDataExampleViewLink = new RouterLink("StreamingDataExample", StreamingDataExampleView.class);
         RouterLink samplingLink = new RouterLink("SamplingView", SamplingView.class);
 

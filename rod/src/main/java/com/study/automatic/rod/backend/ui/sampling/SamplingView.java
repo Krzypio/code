@@ -3,7 +3,6 @@ package com.study.automatic.rod.backend.ui.sampling;
 
 import com.github.appreciated.apexcharts.helper.Series;
 import com.study.automatic.rod.backend.calculation.Calculation;
-import com.study.automatic.rod.backend.calculation.firstCalculation;
 import com.study.automatic.rod.backend.entity.Record;
 import com.study.automatic.rod.backend.entity.Sample;
 import com.study.automatic.rod.backend.service.RecordService;
@@ -50,19 +49,18 @@ public class SamplingView extends VerticalLayout {
     private Button stopButton;
     boolean czyPierwszypoguziku=true;
     private final Calculation calculation;
-    //private firstCalculation firstCalculation;
-    private ArrayList<Calculation> wyniki;
+//    private ArrayList<Calculation> wyniki;
 
     public SamplingView(SampleService sampleService, RecordService recordService){
 
         double x=200,y=200,z=10,t=20,t0=20;// potem brane z inputow albo cos Z i T najlepiej
 double xAlpha=0.00017,yAlpha=0.00012;
 
-      //  this.firstCalculation=new firstCalculation(x,y,z);
-      //  double L0 = 410;
-      //  firstCalculation.setL0(L0);
 
-        this.calculation = new Calculation(x,y,z,t,xAlpha,yAlpha);
+
+        this.calculation = new Calculation(x,y,z,t,xAlpha,yAlpha);// po kolei: to tylko dane startowe z inputow: X poczatkowa dlugosc x w milimetrach
+        //y - pocz dl. mat. y w milimetrach, Z odleglosc ktora ma byc zachowana miedzy nimi w milimetrach, t - poczatkowa temperatura
+        //xAlpha i yAlpha stale wspolczynniki materialow.
         chart = new StreamingDataExampleView();
         chart2 = new StreamingDataExampleView();
         chart3 = new StreamingDataExampleView();
@@ -75,7 +73,7 @@ double xAlpha=0.00017,yAlpha=0.00012;
         //Ustaw wartości początkowe
         calculation.setT(t0);
         chart.setNextValueDouble(calculation.getX());
-        chart2.setNextValueDouble(calculation.getL());
+        chart2.setNextValueDouble(calculation.getPsi());
         chart3.setNextValueDouble(calculation.getY());
 
         sliderValueLabel = new Label("elo");
@@ -150,14 +148,7 @@ double xAlpha=0.00017,yAlpha=0.00012;
         paperSlider.addValueChangeListener(e -> {
             sliderValueLabel.setText(e.getValue().toString());
 
-          //  if(czyPierwszypoguziku==true){
-//calculation dla 1 wywolania musi sie odnosic do Odl(0) potem reszta dalej. to tylko generuje wynik potrzebny dla 1 wywolania
-             //   double L0 = 0;
-             //   firstCalculation.setL0(L0);
-            //    System.out.println(L0+"\n");
-             //   calculation.setLpoprz(L0);
-              //  czyPierwszypoguziku=false;
-           // }
+
 
 
                 calculation.setTi(e.getValue());
