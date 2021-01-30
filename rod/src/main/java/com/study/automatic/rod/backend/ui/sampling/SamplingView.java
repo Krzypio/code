@@ -53,7 +53,7 @@ public class SamplingView extends VerticalLayout {
 
     public SamplingView(SampleService sampleService, RecordService recordService){
 
-        double x=200,y=200,z=10,t=20,t0=20;// potem brane z inputow albo cos Z i T najlepiej
+        double x=200,y=200,z=10,t0=20;// potem brane z inputow albo cos Z i T najlepiej
 double xAlpha=0.00017,yAlpha=0.00012;
 
 
@@ -134,6 +134,7 @@ double xAlpha=0.00017,yAlpha=0.00012;
     }
 
     private PaperSlider createSlider(){
+
 
         this.paperSlider = new PaperSlider();
         paperSlider.setMin(-100);

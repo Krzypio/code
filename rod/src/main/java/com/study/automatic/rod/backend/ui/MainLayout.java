@@ -64,7 +64,8 @@ public class MainLayout extends AppLayout {
         for (RouterLink link: links){
             link.setHighlightCondition(HighlightConditions.sameLocation());
             addToDrawer(new VerticalLayout(link));
-        }//for
+        }
+
 
     }
 }

@@ -139,11 +139,8 @@ private double  licznik=0;
         calculateLi();
     }
 
-
-    public void setT(double t) {
-        this.t = t;
-
-
+    public void settPrev(double tPrev) {
+        this.tPrev = tPrev;
 
     }
 
