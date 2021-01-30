@@ -132,7 +132,7 @@ private double  licznik=0;
 
     }
 
-    public void setTpoprz(double t) {//chyba nieuzywane juz
+    public void setTpoprz(double t) {
         this.t = t;
 
 

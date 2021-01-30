@@ -52,7 +52,7 @@ public class MainLayout extends AppLayout {
 
         addToNavbar(header);
     }
-//
+//nowe
     private void createDrawer() {
         RouterLink materialLink = new RouterLink("Materials", MaterialView.class);
         RouterLink workstationLink = new RouterLink("Workstation", WorkstationView.class);

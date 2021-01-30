@@ -17,9 +17,9 @@ import java.io.*;
 //
 @Route(value = "how_to_calculate_alpha", layout = MainLayout.class)
 //@CssImport("./styles/workstation-styles.css")
-@PageTitle("How to calculate \u03b1 | Automatic")
+@PageTitle("Project info  | Automatic")
 public class HowToCalculateAlphaView extends Div {
-//
+//tez
     public HowToCalculateAlphaView() {
         setHeight("100%");
         add(new EmbeddedPdfDocument(new StreamResource("zad1.pdf", () -> {
@@ -33,7 +33,7 @@ public class HowToCalculateAlphaView extends Div {
     }
 
     private InputStream getPdfInputStream() throws FileNotFoundException {
-        File file = new File("zad1.pdf");   //windows
+        File file = new File("kartaprojektu.pdf");   //windows
         //File file = new File("src\\main\\webapp\\pdf\\zad1.pdf");   //windows
         //File file = new File("src/main/webapp/pdf/zad1.pdf");   //linux
         System.out.println("Expecting to find file from " + file.getAbsolutePath());
