@@ -1,7 +1,5 @@
-package krzypio.forge.backend.service;
+package krzypio.forge.backend.authentication;
 
-import krzypio.forge.backend.entity.User;
-import krzypio.forge.backend.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
