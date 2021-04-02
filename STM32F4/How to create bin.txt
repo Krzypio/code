@@ -1,0 +1,3 @@
+Project - Properties - C++ Build - Settings - Buidl Steps - Post-build steps. Place:
+
+arm-none-eabi-objcopy -O ihex ${BuildArtifactFileBaseName}.elf ${BuildArtifactFileBaseName}.hex && arm-none-eabi-size ${BuildArtifactFileName} && arm-none-eabi-objcopy -O binary ${BuildArtifactFileBaseName}.elf ${BuildArtifactFileBaseName}.bin

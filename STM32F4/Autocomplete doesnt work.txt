@@ -1,0 +1,2 @@
+right click on project > close project
+then open it again

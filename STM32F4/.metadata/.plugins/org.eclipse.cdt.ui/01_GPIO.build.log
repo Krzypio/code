@@ -1,0 +1,24 @@
+00:52:54 **** Incremental Build of configuration Debug for project 01_GPIO ****
+make -j4 all 
+Building file: E:/code/STM32F4/01_GPIO/Core/Src/main.c
+Invoking: MCU GCC Compiler
+E:\code\STM32F4\01_GPIO\SW4STM32\01_GPIO\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/01_GPIO/Core/Inc" -I"E:/code/STM32F4/01_GPIO/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/01_GPIO/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/01_GPIO/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/01_GPIO/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/Core/main.d" -MT"Application/User/Core/main.o" -o "Application/User/Core/main.o" "E:/code/STM32F4/01_GPIO/Core/Src/main.c"
+Finished building: E:/code/STM32F4/01_GPIO/Core/Src/main.c
+ 
+Building target: 01_GPIO.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F411VETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "01_GPIO.elf" @"objects.list"   -lm
+Finished building target: 01_GPIO.elf
+ 
+make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex 01_GPIO.elf 01_GPIO.hex
+arm-none-eabi-size 01_GPIO.elf
+   text	   data	    bss	    dec	    hex	filename
+   4464	     24	   1576	   6064	   17b0	01_GPIO.elf
+arm-none-eabi-objcopy -O binary 01_GPIO.elf 01_GPIO.bin
+ 
+
+00:52:55 Build Finished (took 886ms)
+
