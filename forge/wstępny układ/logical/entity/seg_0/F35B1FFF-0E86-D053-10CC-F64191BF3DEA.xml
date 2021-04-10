@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F35B1FFF-0E86-D053-10CC-F64191BF3DEA" name="Narzędzie">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 08:48:25 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Cecha narzędzia" id="E63DCDA9-730C-9745-7138-6D9050F44710">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 08:48:30 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id rodzaj narzędzia" id="57874FE2-06F8-5EBC-A929-164D3E281C35">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 09:00:09 UTC</createdTime>
+<generatorID>164D1BBC-FC47-A8A1-8758-403FCA0AF3AF</generatorID>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<referedAttribute>C08C42FA-D948-E1C6-A9BC-704AF8630026</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A8B2C4B5-651D-E111-5665-2CB29FFE1F28" name="Narzędzie PK">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 08:48:34 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E63DCDA9-730C-9745-7138-6D9050F44710</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

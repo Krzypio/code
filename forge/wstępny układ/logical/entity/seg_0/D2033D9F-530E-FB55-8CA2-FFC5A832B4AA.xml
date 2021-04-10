@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D2033D9F-530E-FB55-8CA2-FFC5A832B4AA" name="Maszyna">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 08:30:53 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id maszyna" id="EBD23299-3AC0-DD0E-5CC5-E931142BEB16">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 08:31:00 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4E2C935C-0701-65C4-11AD-2B59C19F0FB1" name="Maszyna PK">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 08:31:00 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>EBD23299-3AC0-DD0E-5CC5-E931142BEB16</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

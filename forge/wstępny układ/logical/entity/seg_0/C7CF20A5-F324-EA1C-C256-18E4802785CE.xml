@@ -1,0 +1,40 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C7CF20A5-F324-EA1C-C256-18E4802785CE" name="Ilość w danej lokalizacji">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 10:05:17 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ilość" id="F1EF3C14-2BDC-06AA-3E7E-76F8D5312D3E">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 10:05:29 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1B75D1C2-C598-040B-D200-94C0E1847D67" name="Stan narzędzi PK">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 10:05:36 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<pk>true</pk>
+</identifier>
+</identifiers>
+</Entity>

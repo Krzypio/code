@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="wstępny układ" id="C6B0C50A-1FD1-CB3D-3EDF-3121236327DA" version="3.5">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 07:05:23 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>C6B0C50A-1FD1-CB3D-3EDF-3121236327DA</designId>
+</OSDM_Design>

@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4035B6B5-32AA-E3F1-A7EB-E44D30977814" name="Stanowisko">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 08:41:04 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id stanowiska" id="301800DF-F880-71DF-3B91-3F19725BF63F">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 08:54:40 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id maszyna" id="E2EEA2B5-702E-A2B4-2347-0AE53A95B1BF">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 09:28:19 UTC</createdTime>
+<generatorID>09FA3DAE-17F8-D3EA-E6A0-3EBD2CA72E2C</generatorID>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<referedAttribute>EBD23299-3AC0-DD0E-5CC5-E931142BEB16</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data wprowadzenia" id="368D05A9-9D86-A9D1-4EF8-5A927B0B095D">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 09:34:02 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data wycofania" id="315A57C0-3C29-CF35-CA16-C45842FFDEE9">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 09:34:09 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="24229B9E-05A9-8E96-ECE8-1385397CEAB0" name="Stanowisko PK">
+<createdBy>Krzysztof</createdBy>
+<createdTime>2021-04-10 08:41:12 UTC</createdTime>
+<ownerDesignName>wstępny układ</ownerDesignName>
+<engineerTo>
+<item key="978B0DE5-FE01-C2C6-B467-F21310B8C9EA" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>301800DF-F880-71DF-3B91-3F19725BF63F</attributeRef>
+<attributeRef>E2EEA2B5-702E-A2B4-2347-0AE53A95B1BF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
