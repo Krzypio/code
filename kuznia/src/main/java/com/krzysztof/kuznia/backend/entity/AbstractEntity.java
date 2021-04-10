@@ -5,28 +5,27 @@ import java.util.Date;
 import java.util.Objects;
 
 @MappedSuperclass
-public class AbstractEntity {
+public abstract class AbstractEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date saveDate;
 
-    @Temporal(TemporalType.DATE)
-    private Date withdrawDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date withdrawDate = new Date(Long.MIN_VALUE);
 
-    public boolean isPersisted() {
-        return id != null;
-    }
-
-    //Getters and setters
     public Long getId() {
         return id;
     }
 
     public Date getSaveDate() {
         return saveDate;
+    }
+
+    public void setSaveDate(Date saveDate) {
+        this.saveDate = saveDate;
     }
 
     public Date getWithdrawDate() {
@@ -37,7 +36,6 @@ public class AbstractEntity {
         this.withdrawDate = withdrawDate;
     }
 
-    //Hashcode and equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -53,6 +51,6 @@ public class AbstractEntity {
 
     @PrePersist
     public void beforePersist(){
-        this.saveDate = new Date(System.currentTimeMillis());
+        setSaveDate(new Date(System.currentTimeMillis()));
     }
 }
