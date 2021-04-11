@@ -1,0 +1,54 @@
+FUNKCJE GRUPOWE - zadania
+
+Zad 1.
+SELECT MIN(placa_pod) AS minimum, MAX(placa_pod) AS maksimum, MAX(placa_pod)-MIN(placa_pod) AS roznica FROM pracownicy
+
+Zad 2.
+SELECT etat, AVG(placa_pod) as srednia FROM pracownicy GROUP BY etat ORDER BY srednia DESC
+
+Zad 3.
+SELECT COUNT(*) AS pofesorowie FROM pracownicy WHERE etat = 'PROFESOR'
+
+Zad 4.
+SELECT id_zesp, SUM(placa_pod + NVL(placa_dod, 0)) AS sumaryczne_place FROM pracownicy GROUP BY id_zesp ORDER BY id_zesp
+
+Zad 5.
+SELECT MAX(SUM(placa_pod + NVL(placa_dod, 0))) AS maks_sum_placa FROM pracownicy GROUP BY id_zesp ORDER BY id_zesp
+
+Zad 6.
+SELECT id_szefa, MIN(placa_pod) as minimalna FROM pracownicy WHERE id_szefa IS NOT NULL GROUP BY id_szefa ORDER BY minimalna DESC
+
+Zad 7.
+SELECT id_zesp, COUNT(*) AS ilu_pracuje FROM pracownicy GROUP BY id_zesp ORDER BY ilu_pracuje DESC
+
+Zad 8.
+SELECT id_zesp, COUNT(*) AS ilu_pracuje FROM pracownicy GROUP BY id_zesp HAVING COUNT(*)>3 ORDER BY ilu_pracuje DESC
+
+Zad 9.
+SELECT id_prac as zdublowane_id FROM pracownicy GROUP BY id_prac HAVING COUNT(*)>1
+
+zad 10.
+SELECT etat, AVG(placa_pod) AS srednia, COUNT(*) AS liczba FROM pracownicy WHERE zatrudniony<DATE '1990-01-01' GROUP BY etat ORDER BY etat
+
+zad 11.
+SELECT id_zesp, etat, ROUND(AVG(placa_pod + NVL(placa_dod, 0)), 0) as srednia, ROUND(MAX(placa_pod + NVL(placa_dod, 0)), 0) as srednmaksymalna FROM pracownicy WHERE etat IN ('ASYSTENT', 'PROFESOR') GROUP BY id_zesp, etat ORDER BY id_zesp, etat
+
+zad 12.
+SELECT EXTRACT(YEAR FROM zatrudniony) AS rok, COUNT(*) AS ilu_pracownikow FROM pracownicy GROUP BY EXTRACT(YEAR FROM zatrudniony) ORDER BY rok
+
+zad 13.
+SELECT LENGTH(nazwisko) AS ile_liter, COUNT(*) AS w_ilu_nazwiskach FROM pracownicy GROUP BY LENGTH(nazwisko) ORDER BY ile_liter
+
+zad 14.
+SELECT COUNT(*) AS ile_nazwisk_z_A FROM pracownicy WHERE LOWER(nazwisko) LIKE '%a%'
+
+zad 15.
+SELECT A.ile_nazwisk_z_a, E.ile_nazwisk_z_e
+FROM 
+(SELECT COUNT(*) AS ile_nazwisk_z_a FROM pracownicy WHERE LOWER(nazwisko) LIKE '%a%') A,
+(SELECT COUNT(*) AS ile_nazwisk_z_e FROM pracownicy WHERE LOWER(nazwisko) LIKE '%e%') E
+
+zad 16.
+SELECT id_zesp, sum(placa_pod), 
+LISTAGG(nazwisko || ':' || placa_pod, ';') WITHIN GROUP (ORDER BY nazwisko) AS pracownicy
+from pracownicy group by id_zesp order by id_zesp
