@@ -34,9 +34,9 @@ public class ToolForm extends FormLayout {
 
         binder.bindInstanceFields(this);
 
-        /*binder.forField(name)
-                .withValidator(v -> toolService.findAll().stream().noneMatch(p -> p.getName().equals( v.getName() )), "Name must be unique")
-                .bind(Tool::getName, Tool::setName);*/
+        binder.forField(name)
+                .withValidator(v -> toolService.findAll().stream().noneMatch(p -> p.getName().equals(v)), "Name must be unique")
+                .bind(Tool::getName, Tool::setName);
 
         add(name, createButtonsLayout());
     }
