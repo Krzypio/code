@@ -1,6 +1,7 @@
 package com.krzysztof.kuznia.backend.form;
 
 import com.krzysztof.kuznia.backend.entity.Tool;
+import com.krzysztof.kuznia.backend.service.ToolService;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
@@ -15,6 +16,7 @@ import com.vaadin.flow.data.binder.ValidationException;
 import com.vaadin.flow.shared.Registration;
 
 public class ToolForm extends FormLayout {
+    ToolService toolService;
     private Tool tool;
 
     TextField name = new TextField("Tool name");
@@ -25,9 +27,17 @@ public class ToolForm extends FormLayout {
 
     Binder<Tool> binder = new BeanValidationBinder<>(Tool.class);
 
-    public ToolForm() {
+    public ToolForm(ToolService toolService) {
+        this.toolService = toolService;
+
         addClassName("tool_form");
+
         binder.bindInstanceFields(this);
+
+        /*binder.forField(name)
+                .withValidator(v -> toolService.findAll().stream().noneMatch(p -> p.getName().equals( v.getName() )), "Name must be unique")
+                .bind(Tool::getName, Tool::setName);*/
+
         add(name, createButtonsLayout());
     }
 

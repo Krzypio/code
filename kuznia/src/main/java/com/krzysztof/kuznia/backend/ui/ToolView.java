@@ -29,7 +29,7 @@ public class ToolView extends VerticalLayout {
 
         configureGrid();
 
-        toolForm = new ToolForm();
+        toolForm = new ToolForm(toolService);
         toolForm.addListener(ToolForm.SaveEvent.class, this::saveTool);
         toolForm.addListener(ToolForm.DeleteEvent.class, this::deleteTool);
         toolForm.addListener(ToolForm.CloseEvent.class, e->closeEditor());

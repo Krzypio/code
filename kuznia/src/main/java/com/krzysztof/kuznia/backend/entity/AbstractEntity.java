@@ -6,19 +6,16 @@ import java.util.Objects;
 
 @MappedSuperclass
 public abstract class AbstractEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date saveDate;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date withdrawDate = new Date(Long.MIN_VALUE);
-
-    public Long getId() {
-        return id;
-    }
 
     public Date getSaveDate() {
         return saveDate;
@@ -36,12 +33,16 @@ public abstract class AbstractEntity {
         this.withdrawDate = withdrawDate;
     }
 
+    public long getId() {
+        return id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof AbstractEntity)) return false;
         AbstractEntity that = (AbstractEntity) o;
-        return getId().equals(that.getId());
+        return getId() == that.getId();
     }
 
     @Override
