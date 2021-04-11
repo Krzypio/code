@@ -13,6 +13,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.binder.ValidationException;
+import com.vaadin.flow.data.validator.StringLengthValidator;
 import com.vaadin.flow.shared.Registration;
 
 public class ToolForm extends FormLayout {
@@ -35,7 +36,8 @@ public class ToolForm extends FormLayout {
         binder.bindInstanceFields(this);
 
         binder.forField(name)
-                .withValidator(v -> toolService.findAll().stream().noneMatch(p -> p.getName().equals(v)), "Name must be unique")
+                .withValidator(candidateName -> toolService.findAll().stream().noneMatch(p -> p.getName().equals(candidateName)), "Name must be unique")
+                .withValidator(new StringLengthValidator("Name length must be between 3 and 50", 3, 50))
                 .bind(Tool::getName, Tool::setName);
 
         add(name, createButtonsLayout());

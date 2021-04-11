@@ -3,7 +3,6 @@ package com.krzysztof.kuznia.backend.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.Size;
-import java.util.Objects;
 
 @Entity
 public class Tool extends AbstractEntity {
@@ -30,18 +29,5 @@ public class Tool extends AbstractEntity {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Tool)) return false;
-        Tool tool = (Tool) o;
-        return getName().equals(tool.getName());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), getName());
     }
 }
