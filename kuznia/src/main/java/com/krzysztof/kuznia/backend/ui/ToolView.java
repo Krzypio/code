@@ -4,6 +4,7 @@ import com.krzysztof.kuznia.backend.entity.Tool;
 import com.krzysztof.kuznia.backend.form.ToolForm;
 import com.krzysztof.kuznia.backend.service.ToolService;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Div;
@@ -19,6 +20,7 @@ public class ToolView extends VerticalLayout {
     private ToolService toolService;
     private Grid<Tool> grid = new Grid<>(Tool.class);
     private TextField filterText = new TextField();
+    private Checkbox hideWithdrawBox = new Checkbox("Hide withdrawn");
 
     private ToolForm toolForm;
 
@@ -43,6 +45,8 @@ public class ToolView extends VerticalLayout {
         updateList();
 
         closeEditor();
+
+        hideWithdrawBox.addClickListener(event -> updateList());
     }
 
     private void saveTool(ToolForm.SaveEvent event) {
@@ -76,6 +80,12 @@ public class ToolView extends VerticalLayout {
     private void configureGrid() {
         grid.addClassName("grid-tool_view");
         grid.setSizeFull();
+
+        grid.removeColumnByKey("withdrawDate");
+        grid.addColumn(tool ->{
+            return tool.getWithdrawDate().getTime() == Long.MIN_VALUE ? "-" : tool.getWithdrawDate();
+        }).setHeader("Withdraw date")
+;
         grid.getColumns().forEach(col -> col.setAutoWidth(true));
         grid.asSingleSelect().addValueChangeListener(event -> editTool(event.getValue()));
     }
@@ -89,7 +99,7 @@ public class ToolView extends VerticalLayout {
         Button addToolButton = new Button ("Add tool");
         addToolButton.addClickListener(click -> addTool());
 
-        HorizontalLayout toolbar = new HorizontalLayout(filterText, addToolButton);
+        HorizontalLayout toolbar = new HorizontalLayout(filterText, hideWithdrawBox, addToolButton);
         toolbar.addClassName("toolbar-tool_view");
         return toolbar;
     }
@@ -101,8 +111,10 @@ public class ToolView extends VerticalLayout {
 
 
     private void updateList() {
-        grid.setItems(toolService.findAll(filterText.getValue()));
+        if (hideWithdrawBox.getValue())
+            grid.setItems(toolService.findAllWithoutWithdrawn(filterText.getValue()));
+        else
+            grid.setItems(toolService.findAll(filterText.getValue()));
+
     }
-
-
 }

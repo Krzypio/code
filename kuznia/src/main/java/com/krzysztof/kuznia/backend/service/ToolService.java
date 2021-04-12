@@ -26,9 +26,28 @@ public class ToolService {
 
     public List<Tool> findAll(String filterText) {
         if (filterText == null || filterText.isEmpty()) {
-            return toolRepository.findAll();
+            return findAll();
         } else {
             return toolRepository.search(filterText);
+        }//else
+    }
+
+    private List<Tool> removeWithdrawnTools(List<Tool> tools){
+
+        return tools.stream()
+                .dropWhile(tool -> tool.getWithdrawDate().getTime() != Long.MIN_VALUE)
+                .collect(Collectors.toList());
+    }
+
+    public List<Tool> findAllWithoutWithdrawn() {
+            return removeWithdrawnTools(toolRepository.findAll());
+    }
+
+    public List<Tool> findAllWithoutWithdrawn(String filterText) {
+        if (filterText == null || filterText.isEmpty()) {
+            return findAllWithoutWithdrawn();
+        } else {
+            return removeWithdrawnTools(toolRepository.search(filterText));
         }//else
     }
 
@@ -57,4 +76,5 @@ public class ToolService {
                             .collect(Collectors.toList()));
         }
     }
+
 }
