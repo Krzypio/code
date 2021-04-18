@@ -21,6 +21,8 @@ public class GraphColoring {
         generatedRW.write(genGraph.toString());
         //-----------------------------------------------------------------------------
 */
+
+
         //read file
         ReadWrite fileRW = new ReadWrite("queen6.txt");
 
@@ -30,5 +32,6 @@ public class GraphColoring {
         AlgorithmGreedy greedy = new AlgorithmGreedy(graph);
         System.out.println("Uzyto " + (greedy.getHighestUsedColor()+1) + " kolorów:");
         System.out.println(greedy.toStringColoredVertexes());
+
     }
 }
