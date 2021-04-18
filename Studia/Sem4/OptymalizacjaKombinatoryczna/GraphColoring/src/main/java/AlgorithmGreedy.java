@@ -61,4 +61,17 @@ public class AlgorithmGreedy {
             cUsedColors[i] = false;
         }//for
     }
+
+    public String toStringColoredVertexes(){
+        StringBuilder sb = new StringBuilder();
+        for ( int value: ctVertexColors) {
+            sb.append(value + " ");
+        }//for value
+        sb.setLength(sb.length()-1);
+        return sb.toString();
+    }
+
+    public Graph getGraph() {
+        return graph;
+    }
 }
