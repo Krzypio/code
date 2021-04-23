@@ -1,0 +1,173 @@
+16:07:25 **** Build of configuration Debug for project 02_Joystick ****
+make -j4 all 
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c"
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc_ex.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c"
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+ 
+ 
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
+ 
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c
+Invoking: MCU GCC Compiler
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
+Invoking: MCU GCC Compiler
+ 
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c"
+Invoking: MCU GCC Compiler
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma_ex.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c"
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_exti.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_exti.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c"
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c"
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
+ 
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
+ 
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
+ 
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
+Invoking: MCU GCC Compiler
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
+ 
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ex.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c"
+Invoking: MCU GCC Compiler
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ramfunc.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_flash_ramfunc.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c"
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c"
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c"
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+ 
+ 
+ 
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+ 
+Invoking: MCU GCC Compiler
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_pwr_ex.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c"
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c"
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c"
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+ 
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
+Invoking: MCU GCC Compiler
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c"
+ 
+ 
+ 
+Building file: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c
+Building file: E:/code/STM32F4/02_Joystick/Core/Src/system_stm32f4xx.c
+Building file: E:/code/STM32F4/02_Joystick/Core/Src/main.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_adc.d" -MT"Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_adc.o" -o "Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_adc.o" "E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Drivers/CMSIS/system_stm32f4xx.d" -MT"Drivers/CMSIS/system_stm32f4xx.o" -o "Drivers/CMSIS/system_stm32f4xx.o" "E:/code/STM32F4/02_Joystick/Core/Src/system_stm32f4xx.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/Core/main.d" -MT"Application/User/Core/main.o" -o "Application/User/Core/main.o" "E:/code/STM32F4/02_Joystick/Core/Src/main.c"
+E:/code/STM32F4/02_Joystick/Core/Src/main.c: In function 'main':
+E:/code/STM32F4/02_Joystick/Core/Src/main.c:101:27: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
+ HAL_ADC_Start_DMA(&hadc1, joystick, 2);
+                           ^~~~~~~~
+In file included from E:/code/STM32F4/02_Joystick/Core/Inc/stm32f4xx_hal_conf.h:294:0,
+                 from E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from E:/code/STM32F4/02_Joystick/Core/Inc/main.h:31,
+                 from E:/code/STM32F4/02_Joystick/Core/Src/main.c:21:
+E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h:595:19: note: expected 'uint32_t * {aka long unsigned int *}' but argument is of type 'uint16_t * {aka short unsigned int *}'
+ HAL_StatusTypeDef HAL_ADC_Start_DMA(ADC_HandleTypeDef* hadc, uint32_t* pData, uint32_t Length);
+                   ^~~~~~~~~~~~~~~~~
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c
+Finished building: E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
+ 
+ 
+Building file: E:/code/STM32F4/02_Joystick/Core/Src/stm32f4xx_hal_msp.c
+Building file: E:/code/STM32F4/02_Joystick/Core/Src/stm32f4xx_it.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+Finished building: E:/code/STM32F4/02_Joystick/Core/Src/system_stm32f4xx.c
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+ 
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/Core/stm32f4xx_hal_msp.d" -MT"Application/User/Core/stm32f4xx_hal_msp.o" -o "Application/User/Core/stm32f4xx_hal_msp.o" "E:/code/STM32F4/02_Joystick/Core/Src/stm32f4xx_hal_msp.c"
+Finished building: E:/code/STM32F4/02_Joystick/Core/Src/main.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/Core/stm32f4xx_it.d" -MT"Application/User/Core/stm32f4xx_it.o" -o "Application/User/Core/stm32f4xx_it.o" "E:/code/STM32F4/02_Joystick/Core/Src/stm32f4xx_it.c"
+Building file: E:/code/STM32F4/02_Joystick/SW4STM32/startup_stm32f411xe.s
+ 
+Invoking: MCU GCC Assembler
+Building file: E:/code/STM32F4/02_Joystick/SW4STM32/syscalls.c
+Invoking: MCU GCC Compiler
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "Application/SW4STM32/startup_stm32f411xe.o" "E:/code/STM32F4/02_Joystick/SW4STM32/startup_stm32f411xe.s"
+E:\code\STM32F4\02_Joystick\SW4STM32\02_Joystick\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F411xE -I"E:/code/STM32F4/02_Joystick/Core/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc" -I"E:/code/STM32F4/02_Joystick/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"E:/code/STM32F4/02_Joystick/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/SW4STM32/syscalls.d" -MT"Application/SW4STM32/syscalls.o" -o "Application/SW4STM32/syscalls.o" "E:/code/STM32F4/02_Joystick/SW4STM32/syscalls.c"
+Finished building: E:/code/STM32F4/02_Joystick/SW4STM32/startup_stm32f411xe.s
+ 
+Finished building: E:/code/STM32F4/02_Joystick/Core/Src/stm32f4xx_hal_msp.c
+Finished building: E:/code/STM32F4/02_Joystick/Core/Src/stm32f4xx_it.c
+ 
+ 
+Finished building: E:/code/STM32F4/02_Joystick/SW4STM32/syscalls.c
+ 
+Building target: 02_Joystick.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F411VETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "02_Joystick.elf" @"objects.list"   -lm
+Finished building target: 02_Joystick.elf
+ 
+make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex 02_Joystick.elf 02_Joystick.hex
+arm-none-eabi-size 02_Joystick.elf
+   text	   data	    bss	    dec	    hex	filename
+   7248	     20	   1748	   9016	   2338	02_Joystick.elf
+arm-none-eabi-objcopy -O binary 02_Joystick.elf 02_Joystick.bin
+ 
+
+16:07:29 Build Finished (took 4s.598ms)
+
