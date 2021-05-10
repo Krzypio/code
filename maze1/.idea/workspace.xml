@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ab0abfad-e2ba-4276-b9a1-8ecbcc22d449" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../maze/maze.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maze/src/main/java/Maze.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maze/src/main/java/Start.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maze1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Maze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../linear" beforeDir="false" afterPath="$PROJECT_DIR$/../linear" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/src/main/java/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/../test/src/main/java/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/target/classes/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/../test/target/classes/Start.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1sDnqdL78fv10VDr0WjH3CbupAI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Maze" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Maze" />
+      <module name="maze1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Maze" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ab0abfad-e2ba-4276-b9a1-8ecbcc22d449" name="Default Changelist" comment="" />
+      <created>1620416220000</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620416220000</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="868" y="221" key="#com.intellij.ide.util.MemberChooser" timestamp="1620419770825">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="868" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1160@0.0.1920.1040" timestamp="1620419770825" />
+    <state width="1429" height="279" key="GridCell.Tab.0.bottom" timestamp="1620420325574">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1429" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1160@0.0.1920.1040" timestamp="1620420325574" />
+    <state width="1429" height="279" key="GridCell.Tab.0.center" timestamp="1620420325574">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1429" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1160@0.0.1920.1040" timestamp="1620420325574" />
+    <state width="1429" height="279" key="GridCell.Tab.0.left" timestamp="1620420325574">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1429" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1160@0.0.1920.1040" timestamp="1620420325574" />
+    <state width="1429" height="279" key="GridCell.Tab.0.right" timestamp="1620420325574">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1429" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1160@0.0.1920.1040" timestamp="1620420325574" />
+    <state x="756" y="242" key="run.anything.popup" timestamp="1620417544889">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="756" y="242" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1160@0.0.1920.1040" timestamp="1620417544889" />
+  </component>
+</project>
