@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab0abfad-e2ba-4276-b9a1-8ecbcc22d449" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../maze/maze.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maze/src/main/java/Maze.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maze/src/main/java/Start.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maze1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Maze.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maze/src/main/java/MazeThird.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Studia/Sem4/Robotyka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Studia/Sem4/Robotyka/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../linear" beforeDir="false" afterPath="$PROJECT_DIR$/../linear" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/src/main/java/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/../test/src/main/java/Start.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/target/classes/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/../test/target/classes/Start.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maze/src/main/java/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maze/src/main/java/Maze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maze/src/main/java/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maze/src/main/java/Start.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +66,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="868" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1160@0.0.1920.1040" timestamp="1620419770825" />
+    <state x="880" y="275" key="FileChooserDialogImpl" timestamp="1621972019828">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="880" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1160@0.0.1920.1040" timestamp="1621972019828" />
     <state width="1429" height="279" key="GridCell.Tab.0.bottom" timestamp="1620420325574">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
