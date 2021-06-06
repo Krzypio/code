@@ -1,134 +1,80 @@
-import java.util.Arrays;
+/**
+ * Class to describe orientation
+ */
+public class OrientationMatrix extends Matrix {
+    private Matrix rX = new Matrix(3,3);
+    private Matrix rY = new Matrix(3,3);
+    private Matrix rZ = new Matrix(3,3);
 
-public class OrientationMatrix {
-    private double alphaDegreesX = 0;
-    private double betaDegreesY = 0;
-    private double gammaDegreesZ = 0;
-
-    private double[][] rX = new double[3][3];
-    private double[][] rY = new double[3][3];
-    private double[][] rZ = new double[3][3];
-
-    double[][] r = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}};
-
-    private void fillRX() {
-        double radians = Math.toRadians(this.alphaDegreesX);
-        rX[0][0] = 1;
-        rX[0][1] = 0;
-        rX[0][2] = 0;
-
-        rX[1][0] = 0;
-        rX[1][1] = Math.cos(radians);
-        rX[1][2] = -Math.sin(radians);
-
-        rX[2][0] = 0;
-        rX[2][1] = Math.sin(radians);
-        rX[2][2] = Math.cos(radians);
-    }
-
-    private void fillRY() {
-        double radians = Math.toRadians(this.betaDegreesY);
-        rY[0][0] = Math.cos(radians);
-        rY[0][1] = 0;
-        rY[0][2] = Math.sin(radians);
-
-        rY[1][0] = 0;
-        rY[1][1] = 1;
-        rY[1][2] = 0;
-
-        rY[2][0] = -Math.sin(radians);
-        rY[2][1] = 0;
-        rY[2][2] = Math.cos(radians);
-    }
-
-    private void fillRZ() {
-        double radians = Math.toRadians(this.gammaDegreesZ);
-        rZ[0][0] = Math.cos(radians);
-        rZ[0][1] = -Math.sin(radians);
-        rZ[0][2] = 0;
-
-        rZ[1][0] = Math.sin(radians);
-        rZ[1][1] = Math.cos(radians);
-        rZ[1][2] = 0;
-
-        rZ[2][0] = 0;
-        rZ[2][1] = 0;
-        rZ[2][2] = 1;
-    }
-
+    /**
+     * Create 3x3 orientation matrix with default values I
+     */
     public OrientationMatrix() {
-        fillRX();
-        fillRY();
-        fillRZ();
+        super(3, 3);
+        setDefault();
     }
 
-    private double[][] multiplyMatrices(double[][] a, double[][] b) {
-        double result[][] = new double[3][3];
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                result[i][j] = 0;   //clear
-                for (int k = 0; k < 3; k++) {
-                    result[i][j] += a[i][k] * b[k][j];
-                }//for k
-            }// for j
-        }// for i
-        return result;
-    }//multiplyMatrices()
-
-    private double[][] copyOfR(){
-        double[][] copyR = new double[3][3];
-        for(int i=0; i<3; i++){
-            for(int j=0; j<3; j++){
-                copyR[i][j] = r[i][j];
-            }//for j
-        }//for i
-        return copyR;
+    private void fillRX(double alphaDegrees) {
+        double radians = Math.toRadians(alphaDegrees);
+        double[][] bufor = new double[3][3];
+        bufor[0][0] = 1;                   bufor[0][1] = 0;                  bufor[0][2] = 0;
+        bufor[1][0] = 0;                   bufor[1][1] = Math.cos(radians);  bufor[1][2] = -Math.sin(radians);
+        bufor[2][0] = 0;                   bufor[2][1] = Math.sin(radians);  bufor[2][2] = Math.cos(radians);
+        rX.set(bufor);
+    }
+    private void fillRY(double betaDegrees) {
+        double radians = Math.toRadians(betaDegrees);
+        double[][] bufor = new double[3][3];
+        bufor[0][0] = Math.cos(radians);   bufor[0][1] = 0;                   bufor[0][2] = Math.sin(radians);
+        bufor[1][0] = 0;                   bufor[1][1] = 1;                   bufor[1][2] = 0;
+        bufor[2][0] = -Math.sin(radians);  bufor[2][1] = 0;                   bufor[2][2] = Math.cos(radians);
+        rY.set(bufor);
+    }
+    private void fillRZ(double gammaDegrees) {
+        double radians = Math.toRadians(gammaDegrees);
+        double[][] bufor = new double[3][3];
+        bufor[0][0] = Math.cos(radians);   bufor[0][1] = -Math.sin(radians);  bufor[0][2] = 0;
+        bufor[1][0] = Math.sin(radians);   bufor[1][1] = Math.cos(radians);   bufor[1][2] = 0;
+        bufor[2][0] = 0;                   bufor[2][1] = 0;                   bufor[2][2] = 1;
+        rZ.set(bufor);
     }
 
-    public void setAlphaDegreesX(double alphaDegreesX) {
-        this.alphaDegreesX = alphaDegreesX;
-        fillRX();
-        r = multiplyMatrices(copyOfR(), rX);
+    /**
+     * Rotate by some degrees by X axis. Counter clock wise is used.
+     * @param alphaDegrees in degrees
+     */
+    public void rotateX(double alphaDegrees) {
+        fillRX(alphaDegrees);
+        multiply(rX);
     }
 
-    public void setBetaDegreesY(double betaDegreesY) {
-        this.betaDegreesY = betaDegreesY;
-        fillRY();
-        r = multiplyMatrices(copyOfR(), rY);
+    /**
+     * Rotate by some degrees by Y axis. Counter clock wise is used.
+     * @param betaDegrees in degrees
+     */
+    public void rotateY(double betaDegrees) {
+        fillRY(betaDegrees);
+        multiply(rY);
     }
 
-    public void setGammaDegreesZ(double gammaDegreesZ) {
-        this.gammaDegreesZ = gammaDegreesZ;
-        fillRZ();
-        r = multiplyMatrices(copyOfR(), rZ);
+    /**
+     * Rotate by some degrees by Z axis. Counter clock wise is used.
+     * @param gammaDegrees in degrees
+     */
+    public void rotateZ(double gammaDegrees) {
+        fillRZ(gammaDegrees);
+        multiply(rZ);
     }
 
-    public double[][] getR() {
-        return r;
-    }
-
-    private String matrixToString(double[][] matrix){
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                sb.append(Double.toString(matrix[i][j]) + "\t");
-            }//for j
-            sb.append("\n");
-        }//for i
-        return sb.toString();
-    }
-
+    /**
+     * Set matrix as I matrix with 1 on diagonal and 0 everywhere else
+     */
     @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                String strDouble = String.format("%5.2f", r[i][j]);
-                sb.append(strDouble + '\t');
-            }//for j
-            sb.append("\n");
+    public void setDefault(){
+        for (int i=0; i<3; i++){
+            for(int j=0; j<3; j++)
+                if (i==j) matrix[i][j] = 1;
+                else matrix[i][j] = 0;
         }//for i
-        sb.setLength(sb.length()-1);
-        return sb.toString();
-    }//toString()
+    }
 }

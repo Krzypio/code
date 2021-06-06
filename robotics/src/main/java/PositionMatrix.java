@@ -1,44 +1,48 @@
-import java.util.Objects;
-
-public class PositionMatrix {
-    private double x = Double.POSITIVE_INFINITY;
-    private double y = Double.POSITIVE_INFINITY;
-    private double z = Double.POSITIVE_INFINITY;
-
-    private PositionMatrix() {
+/**
+ * Class to describe position
+ */
+public class PositionMatrix extends Matrix {
+    /**
+     * create 3x1 position matrix with x=0, y=0, z=0
+     */
+    public PositionMatrix() {
+        super(3, 1);
     }
 
+    /**
+     * create 3x1 position matrix with x=x, y=y, z=z
+     */
     public PositionMatrix(double x, double y, double z) {
-        setXYZ(x, y, z);
+        super(3, 1);
+        matrix[0][0] = x;
+        matrix[1][0] = y;
+        matrix[2][0] = z;
     }
 
-    public void setXYZ(double x, double y, double z) {
-        setX(x);
-        setY(y);
-        setZ(z);
+    /**
+     * Create 3x1 position matrix with the same parameters as source
+     * @param position is matrix to copy
+     */
+    public PositionMatrix(PositionMatrix position) {
+        super(3, 1);
+        set(position.get());
     }
 
-    public double getX() {
-        return x;
-    }
+    /**
+     * Create 3x1 position matrix of point relative to A
+     * @param aTb is transformation matrix of B relative to A
+     * @param bP is position matrix of point relative to B
+     */
+    public PositionMatrix(TransformationMatrix aTb, PositionMatrix bP) {
+        this();
+        Matrix bPextended = new Matrix(4, 1);
+        for(int i=0; i<3; i++)
+            bPextended.get()[i][0] = bP.get()[i][0];
+        bPextended.get()[3][0] = 1;
 
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
-
-    public double getZ() {
-        return z;
-    }
-
-    public void setZ(double z) {
-        this.z = z;
+        Matrix aP = new Matrix(aTb);
+        aP.multiply(bPextended);
+        for (int i=0; i<3; i++)
+            matrix[i][0] = aP.get()[i][0];
     }
 }
