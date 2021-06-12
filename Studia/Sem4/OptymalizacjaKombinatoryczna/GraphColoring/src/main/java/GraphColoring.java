@@ -28,7 +28,7 @@ public class GraphColoring {
 
         //solve graph
         Graph graph = new Graph(fileRW.read());
-        System.out.println(graph);
+        //System.out.println(graph);
         AlgorithmGreedy greedy = new AlgorithmGreedy(graph);
         System.out.println("Uzyto " + (greedy.getHighestUsedColor()+1) + " kolorów:");
         System.out.println(greedy.toStringColoredVertexes());

@@ -1,7 +1,12 @@
 public class Main {
-
     public static void main(String[] args) {
-        System.out.println("Robotics");
+        Human krzysztof = new Human();
+        for(int i=0; i<30; i++)
+            krzysztof.aging();
+        System.out.println("Wiek Krzysztofa to " + krzysztof.getAge() + " lat.");
+    }
+}
+        /*System.out.println("Robotics");
 
         OrientationMatrix aRb = new OrientationMatrix();
         aRb.rotateY(30);
@@ -22,5 +27,4 @@ public class Main {
         System.out.println("aTb: \n" + aTb);
         System.out.println("bP: \n" + bP);
         System.out.println("aP: \n" + aP);
-    }//main()
-}
+    }*/

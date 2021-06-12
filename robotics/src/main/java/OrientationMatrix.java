@@ -2,9 +2,9 @@
  * Class to describe orientation
  */
 public class OrientationMatrix extends Matrix {
-    private Matrix rX = new Matrix(3,3);
-    private Matrix rY = new Matrix(3,3);
-    private Matrix rZ = new Matrix(3,3);
+    private final Matrix rX = new Matrix(3,3);
+    private final Matrix rY = new Matrix(3,3);
+    private final Matrix rZ = new Matrix(3,3);
 
     /**
      * Create 3x3 orientation matrix with default values I
