@@ -33,5 +33,8 @@ public class GraphColoring {
         System.out.println("Uzyto " + (greedy.getHighestUsedColor()+1) + " kolorów:");
         System.out.println(greedy.toStringColoredVertexes());
 
+        //---- ACO
+
+
     }
 }
