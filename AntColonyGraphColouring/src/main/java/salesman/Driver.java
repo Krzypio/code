@@ -1,46 +1,91 @@
 package salesman;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 
 public class Driver {
+    private int antIdDesirableLength = 0;
+
     static final int NUMBER_OF_ANTS = 100;
     static ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
     static ExecutorCompletionService<Ant> executorCompletionService = new ExecutorCompletionService<Ant>(executorService);
+    private Route shortestRoute = null;
     private int activeAnts = 0;
 
+    protected static ArrayList<City> initialRoute = new ArrayList<>();
+
     public static void main(String[] args) {
+        System.out.print("> " + NUMBER_OF_ANTS + " Artifical Ants ...");
+        initialRoute = CityLoader.get();
         Driver driver = new Driver();
-        System.out.print("> Driver.main: enter activate ants loop ...");
-        IntStream.range(1, NUMBER_OF_ANTS).forEach(x -> {
-            System.out.println("\nDriver.main: executorCompletionService.submint(new Ant())");
-            executorCompletionService.submit(new Ant());
+        driver.printHeading();
+        AntColonyOptimization aco = new AntColonyOptimization();
+        //jesli activeAnts = 0 to podnieś semafor, inaczej zamknięty
+        //---------------------------------------------------------------------
+        IntStream.range(0, NUMBER_OF_ANTS).forEach(x -> {
+            executorCompletionService.submit(new Ant(aco, x + 1, 1));
             driver.activeAnts++;
-            while(driver.activeAnts > 0){
-                System.out.println("Driver.main: executorCompletionService.take()");
-                try {
-                    executorCompletionService.take();
-                } catch(Exception e){
-                    e.printStackTrace();
-                }//exception
-                driver.activeAnts--;
-            }//while
         });//IntStream.range
-        System.out.println("\n> Driver.main: exit activate ants loop ...");
+        driver.processAnts();
+        //---------------------------------------------------------------------
+        driver.awaitTerminationAfterShutdown(executorService);
         executorService.shutdownNow();
 
-        /*System.out.print("TSP ACO");
-        Graph<Integer, Double> graph = new SparseMultigraph<Integer, Double>(); //vertex int, edge double for distance
-        for (int i=0; i<3; i++)
-            graph.addVertex(i+1);
-
-        graph.addEdge(0.1, 1,2);
-        graph.addEdge(7.0,2,3);
-
-
-        System.out.println("The graph g = " + graph.toString());*/
+        System.out.println("\nOptimal Route : " + Arrays.toString(driver.shortestRoute.getCities().toArray()));
+        System.out.println("\tDistance : " + String.format("%,.2f", driver.shortestRoute.getDistance()) );
     }//main()
+
+    private void processAnts(){
+        while(activeAnts > 0){
+            try {
+                Ant ant = executorCompletionService.take().get();
+                Route antRoute = ant.getRoute();
+                if(shortestRoute == null || antRoute.getDistance() < shortestRoute.getDistance()){
+                    shortestRoute = antRoute;
+                    StringBuffer sb = new StringBuffer();
+                    sb.append(ant.getAntNum());
+                    for (int x=Integer.toString(ant.getAntNum()).length(); x<antIdDesirableLength; x++) sb.append(" ");
+                    sb.append( "| " + String.format("%,.2f", antRoute.getDistance()));
+                    System.out.println(sb.toString());
+                }//if
+            } catch(Exception e){
+                e.printStackTrace();
+            }//exception
+            activeAnts--;
+        }//while
+    }//processAnts()
+
+    private void printHeading(){
+        String antIdHeading = "\nAnt #";
+        this.antIdDesirableLength = Math.max(antIdHeading.length(), Integer.toString(NUMBER_OF_ANTS).length());
+        System.out.print(antIdHeading);
+        for (int x=antIdHeading.length(); x<antIdDesirableLength; x++) System.out.print(" ");
+        System.out.println(" | Distance");
+    }//printHeading()
+
+    private void awaitTerminationAfterShutdown(ExecutorService threadPool) {
+        if(threadPool == null){
+            System.out.print("Driver - awaitTerminationAfterShutdown: DANO PUSTY THREAD_POOL");
+            return;
+        }
+        threadPool.shutdown();
+        try {
+            if (!threadPool.awaitTermination(60, TimeUnit.SECONDS)) {
+                threadPool.shutdownNow();
+                System.out.print("*************************SHUTDOWN THREAD********************");
+            }//if
+        } catch (InterruptedException ex) {
+            threadPool.shutdownNow();
+            Thread.currentThread().interrupt();
+        }//catch
+    }//awaitTerminationAfterShutdown()
+
 }//Driver class
