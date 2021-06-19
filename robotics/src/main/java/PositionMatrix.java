@@ -45,4 +45,19 @@ public class PositionMatrix extends Matrix {
         for (int i=0; i<3; i++)
             matrix[i][0] = aP.get()[i][0];
     }
+
+    /**
+     * Multiply OrientationMatrix * PositionMatrix
+     * @param orientation
+     * @param positionMatrix
+     */
+    public PositionMatrix(OrientationMatrix orientation, PositionMatrix positionMatrix){
+        this();
+        for(int i=0; i<3; i++){
+            double value = 0;
+            for (int j=0; j<3; j++)
+                value += positionMatrix.get()[j][0] * orientation.get()[i][j];
+            get()[i][0] = value;
+        }//for i
+    }
 }

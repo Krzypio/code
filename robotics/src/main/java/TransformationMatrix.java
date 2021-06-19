@@ -24,6 +24,40 @@ public class TransformationMatrix extends Matrix{
         update();
     }
 
+    public TransformationMatrix(){
+        super(4, 4);
+        setDefault();
+    }
+    public TransformationMatrix(double[][] matrix4x4){
+        super(4, 4);
+
+        if (matrix4x4.length != 4 || matrix4x4[0].length != 4)
+            throw new IllegalArgumentException("Delivered matrix in argument is not 4x4");
+
+        orientation.get()[0][0] = matrix4x4[0][0];
+        orientation.get()[0][1] = matrix4x4[0][1];
+        orientation.get()[0][2] = matrix4x4[0][2];
+
+        orientation.get()[1][0] = matrix4x4[1][0];
+        orientation.get()[1][1] = matrix4x4[1][1];
+        orientation.get()[1][2] = matrix4x4[1][2];
+
+        orientation.get()[2][0] = matrix4x4[2][0];
+        orientation.get()[2][1] = matrix4x4[2][1];
+        orientation.get()[2][2] = matrix4x4[2][2];
+
+        position.get()[0][0] = matrix4x4[0][3];
+        position.get()[1][0] = matrix4x4[1][3];
+        position.get()[2][0] = matrix4x4[2][3];
+
+        get()[3][0] = 0;
+        get()[3][1] = 0;
+        get()[3][2] = 0;
+        get()[3][3] = 1;
+
+        update();
+    }
+
     /**
      * Update values of matrix. NECESSARY to run after changes.
      */

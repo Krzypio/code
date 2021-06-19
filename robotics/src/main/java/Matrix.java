@@ -86,29 +86,29 @@ public class Matrix {
 
     /**
      * Multiply actual matrix by multiplier matrix. Results saved in actual matrix.
-     * @param matrix multiplier
+     * @param multiplier multiplier
      */
-    public void multiply(Matrix matrix) {
-        if(!this.isValid || !matrix.isValid()){
+    public void multiply(Matrix multiplier) {
+        if(!this.isValid || !multiplier.isValid()){
             this.isValid = false;
             return;
         }
-        if(this.getColumns() != matrix.getRows()){
+        if(this.getColumns() != multiplier.getRows()){
             this.isValid = false;
             return;
         }
 
-        double result[][] = new double[rows][matrix.columns];
+        double result[][] = new double[rows][multiplier.columns];
 
         for (int rA = 0; rA < rows; rA++) {
-            for (int cB = 0; cB < matrix.getColumns(); cB++) {
+            for (int cB = 0; cB < multiplier.getColumns(); cB++) {
                 result[rA][cB] = 0;   //clear
                 for (int cArB = 0; cArB < columns; cArB++) {
-                    result[rA][cB] += this.matrix[rA][cArB] * matrix.get()[cArB][cB];
+                    result[rA][cB] += this.matrix[rA][cArB] * multiplier.get()[cArB][cB];
                 }//for k
             }// for j
         }// for i
-        this.columns = matrix.getColumns();
+        this.columns = multiplier.getColumns();
         this.matrix = new double[rows][columns];
         this.setDefault();
         this.set(result);

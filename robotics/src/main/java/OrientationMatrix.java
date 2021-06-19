@@ -14,6 +14,28 @@ public class OrientationMatrix extends Matrix {
         setDefault();
     }
 
+    public OrientationMatrix(OrientationMatrix orientation) {
+        super(3, 3);
+        get()[0][0] = orientation.get()[0][0];
+        get()[0][1] = orientation.get()[0][1];
+        get()[0][2] = orientation.get()[0][2];
+
+        get()[1][0] = orientation.get()[1][0];
+        get()[1][1] = orientation.get()[1][1];
+        get()[1][2] = orientation.get()[1][2];
+
+        get()[2][0] = orientation.get()[2][0];
+        get()[2][1] = orientation.get()[2][1];
+        get()[2][2] = orientation.get()[2][2];
+    }
+
+    public OrientationMatrix(double[][] input3x3){
+        super(3, 3);
+        if (input3x3.length != 3 || input3x3[0].length != 3)
+            throw new IllegalArgumentException("Delivered matrix in argument is not 3x3");
+        set(input3x3);
+    }
+
     private void fillRX(double alphaDegrees) {
         double radians = Math.toRadians(alphaDegrees);
         double[][] bufor = new double[3][3];
