@@ -20,7 +20,10 @@ public class AntColonyOptimization {
         pheromoneLevelsMatrix = new AtomicDouble[citiesSize][citiesSize];
         Random random = new Random();
         IntStream.range(0,citiesSize).forEach(x -> {
-            IntStream.range(0, citiesSize).forEach(y -> pheromoneLevelsMatrix[x][y] = new AtomicDouble(random.nextDouble()));
+            IntStream.range(0, citiesSize).forEach(y ->
+                    //pheromoneLevelsMatrix[x][y] = new AtomicDouble(random.nextDouble())
+                    pheromoneLevelsMatrix[x][y] = new AtomicDouble(1.0)
+            );//foreach y
         });//forEach x
     }
 
@@ -40,4 +43,16 @@ public class AntColonyOptimization {
     public double[][] getDistancesMatrix() {
         return distancesMatrix;
     }
+
+    /*public void evaporate(double value) {
+        IntStream.range(0, citiesSize).forEach(x -> {
+            IntStream.range(0, citiesSize).forEach(y -> {
+                double actualPheromoneLevel = pheromoneLevelsMatrix[x][y].doubleValue();
+                if(actualPheromoneLevel>0){
+                    double updatedPheromoneLevel = (1-value) * actualPheromoneLevel;
+                    pheromoneLevelsMatrix[x][y].compareAndSet(updatedPheromoneLevel);
+                }//if
+            });
+        });
+    }*/
 }

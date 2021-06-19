@@ -59,4 +59,36 @@ public class TransformationMatrix extends Matrix{
 
         update();
     }
+
+    public TransformationMatrix getInverse(){
+        Matrix positionInv = new Matrix(3,1);
+        OrientationMatrix orientationInv = new OrientationMatrix();
+
+        //variables
+        double a1, a2, a3, b1, b2, b3, c1, c2, c3, px, py, pz;
+        a1 = get()[0][0];   b1 = get()[0][1];   c1 = get()[0][2];   px = get()[0][3];
+        a2 = get()[1][0];   b2 = get()[1][1];   c2 = get()[1][2];   py = get()[1][3];
+        a3 = get()[2][0];   b3 = get()[2][1];   c3 = get()[2][2];   pz = get()[2][3];
+
+        //set positionInv
+        positionInv.get()[0][0] = -(px*a1 + py*a2 + pz*a3);
+        positionInv.get()[1][0] = -(px*b1 + py*b2 + pz*b3);
+        positionInv.get()[2][0] = -(px*c1 + py*c2 + pz*c3);
+
+        //set orientationInv
+        orientationInv.get()[0][0] = a1;
+        orientationInv.get()[0][1] = a2;
+        orientationInv.get()[0][2] = a3;
+
+        orientationInv.get()[1][0] = b1;
+        orientationInv.get()[1][1] = b2;
+        orientationInv.get()[1][2] = b3;
+
+        orientationInv.get()[2][0] = c1;
+        orientationInv.get()[2][1] = c2;
+        orientationInv.get()[2][2] = c3;
+
+        TransformationMatrix transformationInv = new TransformationMatrix(orientationInv, positionInv);
+        return transformationInv;
+    }
 }

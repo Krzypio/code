@@ -7,10 +7,10 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
 public class Ant implements Callable<Ant> {
-    public static final double Q = 0.005; //parameter used for adjusting the amount of pheromone deposited. The value between 0 and 1
-    public static final double EVAPORATION = 0.2; //parameter used for varying the level of pheromone evaporation. The value between 0 and 1
-    public static final double ALPHA = 0.01; //parameter used for controlling the importance of the pheromone trail. The value is bigger than 0
-    public static final double BETA = 9.5; //parameter used for controlling the importance of the distance between source and destination. The value is not less than 1
+    public static final double Q = 0.05; //parameter used for adjusting the amount of pheromone deposited. The value between 0 and 1
+    public static final double EVAPORATION = 0.0001; //parameter used for varying the level of pheromone evaporation. The value between 0 and 1
+    public static final double ALPHA = 1; //parameter used for controlling the importance of the pheromone trail. The value is bigger than 0
+    public static final double BETA = 8; //parameter used for controlling the importance of the distance between source and destination. The value is not less than 1
     private AntColonyOptimization aco;
     private int antNum;
     private int iterNum;
@@ -58,8 +58,10 @@ public class Ant implements Callable<Ant> {
         while(!flag){
             double currentPheromoneLevel = aco.getPheromoneLevelsMatrix()[actualCityIndex][nextCityIndex].doubleValue();
             double updatedPheromoneLevel = (1-EVAPORATION) * currentPheromoneLevel + Q/routeDistance;
-            if (updatedPheromoneLevel < 0.00) flag = aco.getPheromoneLevelsMatrix()[actualCityIndex][nextCityIndex].compareAndSet(0);
+            if (updatedPheromoneLevel < 0.00)
+                flag = aco.getPheromoneLevelsMatrix()[actualCityIndex][nextCityIndex].compareAndSet(0);
             else flag = aco.getPheromoneLevelsMatrix()[actualCityIndex][nextCityIndex].compareAndSet(updatedPheromoneLevel);
+            //if(flag && updatedPheromoneLevel>0.2) System.out.print("(" + updatedPheromoneLevel + ")");
         }//while
     }
 
