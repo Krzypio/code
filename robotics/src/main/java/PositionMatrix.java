@@ -47,7 +47,7 @@ public class PositionMatrix extends Matrix {
     }
 
     /**
-     * Multiply OrientationMatrix * PositionMatrix
+     * Multiply OrientationMatrix * PositionMatrix to obtain new PositionMatrix
      * @param orientation
      * @param positionMatrix
      */

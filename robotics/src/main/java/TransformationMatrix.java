@@ -24,6 +24,10 @@ public class TransformationMatrix extends Matrix{
         update();
     }
 
+    public TransformationMatrix(TransformationMatrix transformation){
+        this(transformation.get());
+    }
+
     public TransformationMatrix(){
         super(4, 4);
         setDefault();
@@ -124,5 +128,42 @@ public class TransformationMatrix extends Matrix{
 
         TransformationMatrix transformationInv = new TransformationMatrix(orientationInv, positionInv);
         return transformationInv;
+    }
+
+    public void eulerAnglesZXZ(){
+        double alpha=0, beta=0, gamma=0;
+        double r11, r12, r13, r21, r22, r23, r31, r32, r33;
+        r11 = get()[0][0];  r12 = get()[0][1];  r13 = get()[0][2];
+        r21 = get()[1][0];  r22 = get()[1][1];  r23 = get()[1][2];
+        r31 = get()[2][0];  r32 = get()[2][1];  r33 = get()[2][2];
+
+        /*if (r13==0)
+            System.out.println("-----------------------r13=0 błąd");
+        if (r23==0)
+            System.out.println("-----------------------r23=0 błąd");
+
+        alpha = Math.atan2(r23, r13);
+        beta = Math.acos(r33);
+
+        if (beta>0){
+            alpha = alpha;
+            beta = Math.atan2(Math.sqrt( Math.pow(r13,2) + Math.pow(r23,2) ), r33);
+            gamma = Math.atan2(r32, -r31);
+        } else if (beta<0) {
+            alpha = Math.atan2(-r23, -r13);
+            beta = Math.atan2(Math.sqrt(-Math.pow(r13,2) + Math.pow(r23,2) ), r33);
+            gamma = Math.atan2(-r32, r31);
+        } else
+            System.out.println("-----brak rozwiązania dla sin(beta)=0");*/
+
+        beta = Math.acos(r33);
+        gamma = Math.atan(r31/r32);
+        alpha = Math.atan(r13/-r23);
+
+        alpha = Math.toDegrees(alpha);
+        beta = Math.toDegrees(beta);
+        gamma = Math.toDegrees(gamma);
+
+        System.out.println("eulerAnglesZXZ: alpha(+-)=" + alpha + ", beta(+-)=" + beta + ", gamma=" + gamma);
     }
 }

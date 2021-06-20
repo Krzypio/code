@@ -89,7 +89,7 @@ public class OrientationMatrix extends Matrix {
     }
 
     /**
-     * Set matrix as I matrix with 1 on diagonal and 0 everywhere else
+     * Set matrix as I matrix with 1 on diagonal and 0 everywhere else.
      */
     @Override
     public void setDefault(){
@@ -98,5 +98,50 @@ public class OrientationMatrix extends Matrix {
                 if (i==j) matrix[i][j] = 1;
                 else matrix[i][j] = 0;
         }//for i
+    }
+
+    /**
+     * Each rotation takes place about a fixed (non-moving) reference frame. Backward execution (alphaZ, betaY, gammaX).
+     * @param gammaX
+     * @param betaY
+     * @param alphaZ
+     */
+    public void fixedAngleRepresentationXYZ(double gammaX, double betaY, double alphaZ){
+        fillRZ(alphaZ);
+        multiply(rZ);
+        fillRY(betaY);
+        multiply(rY);
+        fillRX(gammaX);
+        multiply(rX);
+    }
+
+    /**
+     * Backward execution (alphaZ, betaY, gammaZ).
+     * @param gammaZ
+     * @param betaY
+     * @param alphaZ
+     */
+    public void fixedAngleRepresentationZYZ(double gammaZ, double betaY, double alphaZ){
+        fillRZ(alphaZ);
+        multiply(rZ);
+        fillRY(betaY);
+        multiply(rY);
+        fillRZ(gammaZ);
+        multiply(rZ);
+    }
+
+    /**
+     * Each rotation takes place about the axis of the moving system. ' are used to show its Euler Angle. Forward execution (alphaX, betaY, gammaZ)
+     * @param alphaX x'
+     * @param betaY y'
+     * @param gammaZ z'
+     */
+    public void eulerAngleRepresentationXiYiZi(double gammaZ, double betaY, double alphaX){
+        fillRX(alphaX);
+        multiply(rX);
+        fillRY(betaY);
+        multiply(rY);
+        fillRZ(gammaZ);
+        multiply(rZ);
     }
 }
